@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>NASA's Images: Suggested Searches</title>
+	<link rel="stylesheet" type="text/css" href = "../static/css/suggestions.css">
+</head>
+<body>
+
+<!-- Splashscreen: opening search bar and popular searches options -->
+<div class="splashscreen">
+	<h1>ahh There's an asteroid</h1>
+	<h2>Unfortunately, no images matched your search.</h2>
+	<!-- Sirst_search: form for starting your search -->
+	<div class="first_search">
+		<form action="/search" method="POST">
+			<input class="search_box" type="text" placeholder="Please Try Another Search..." name="search" required>
+			<button>SEARCH</button>
+		</form>
+	</div>
+	<!-- Optional popular searches links -->
+	<h5>Popular Searches: <a href="/Hubble+Space+Telescope">Hubble Space Telescope</a>, <a href="/Apollo+11">Apollo 11</a>, <a href="/New+Horizons">New Horizons</a></h5>
+</div>
+</body>

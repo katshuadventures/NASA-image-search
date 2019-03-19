@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>NASA Image Search</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href = "../static/css/searchPage.css">
+</head>
+<body>
+	<!-- Page title banner and search bar -->
+	<div class="nav">
+		<div class="col-sm-5">
+			<!-- Clicking on the title redirects back to the first page -->
+			<a href="/"><h1>NASA's Images</h1></a>
+		</div>
+		<!-- Next_search: form for continuing your search -->
+		<div class="col-sm-7" id="next_search">
+			<form action="/search" method="POST">
+				<input type="text" placeholder="Search..." name="search" required>
+				<button>SEARCH</button>
+			</form>
+		</div>
+	</div>
+	<!-- Main body of the page: popular/refine searches and image display-->
+	<div id="main_body">
+		<!-- Left hand column of the body -->
+		<div class="col-sm-3">
+			<div id="outer_ps">
+				<!-- Popular Searches section, hover for the dropdown -->
+				<div id="popular_searches">
+					<button><h3 class="dropbtn">Popular Searches to Consider</h3></button>
+					<div class="dropdown_content">
+						<a href="/Hubble+Space+Telescope">Hubble Space Telescope</a>
+						<a href="/Apollo+11">Apollo 11</a>
+						<a href="/New+Horizons">New Horizons</a>
+						<a href="/Galileo">Galileo</a>
+						<a href="/Voyager+1">Voyager 1</a>
+						<a href="/Earth">Earth</a>
+						<a href="/Katherine+Johnson">Katherine Johnson</a>
+					</div>
+				</div>
+			</div>
+			<!-- Refine Searches section: date range, location, and center -->
+			<div id="refine_searches">
+				<h3>Refine Your Search</h3>
+				<p>Please only pick one option per parameter and <em>either</em> a location or a center</p>
+				<p>Refinements reload for each new search.</p>
+				<form id="rs_form" action="/refine" method="POST">
+					<!-- Date range dropdown -->
+					<label>
+					<h4>Date Range:</h4>
+					<select name="start" class="date">
+						<option>Start Year</option>
+						<option>2015</option>
+						<option>2010</option>
+						<option>2005</option>
+						<option>2000</option>
+						<option>1995</option>
+						<option>1990</option>
+						<option>1985</option>
+						<option>1980</option>
+						<option>1975</option>
+						<option>1970</option>
+						<option>1965</option>
+						<option>1960</option>
+					</select>
+					to
+					<select name="end" class="date">
+						<option>Present</option>
+						<option>2015</option>
+						<option>2010</option>
+						<option>2005</option>
+						<option>2000</option>
+						<option>1995</option>
+						<option>1990</option>
+						<option>1985</option>
+						<option>1980</option>
+						<option>1975</option>
+						<option>1970</option>
+						<option>1965</option>
+					</select>
+					</label>
+					<!-- Location checkboxes -->
+					<h4>Locations:</h4>
+					<label class="check">Fire Station 1
+						<input type="checkbox" name="loc" value="Fire Station 1">
+					</label>
+					<label class="check">Horizontal Integration Facility
+						<input type="checkbox" name="loc" value="Horizontal Integration Facility">
+					</label>
+					<label class="check">International Space Station
+						<input type="checkbox" name="loc" value="International Space Station">
+					</label>
+					<label class="check">K6-0696 Orbiter Processing Facility 
+						<input type="checkbox" name="loc" value="K6-0696 Orbiter Processing Facility">
+					</label>
+					<label class="check">National Air and Space Museum
+						<input type="checkbox" name="loc" value="K6-0696 Orbiter Processing Facility">
+					</label>
+					<label class="check">Orbital ATK Propulsion Systems
+						<input type="checkbox" name="loc" value="Orbital ATK">
+					</label>
+					<label class="check">Orbiter Payload Canisters
+						<input type="checkbox" name="loc" value="Orbiter Payload Canisters">
+					</label>
+					<label class="check">Parachute Refurbishment Facility
+						<input type="checkbox" name="loc" value="Parachute Refurbishment Facility">
+					</label>
+					<label class="check">Saturn V Facility
+						<input type="checkbox" name="loc" value="KSC">
+					</label>
+					<label class="check">Shuttle Landing Facility
+						<input type="checkbox" name="loc" value="Shuttle Landing Facility">
+					</label>
+					<label class="check">Space Station Processing Facility
+						<input type="checkbox" name="loc" value="Space Station Processing Facilit">
+					</label>
+					<label class="check">Star City, Russia
+						<input type="checkbox" name="loc" value="Star City">
+					</label>
+					<label class="check">Union Station
+						<input type="checkbox" name="loc" value="Union Station">
+					</label>
+					<label class="check">Wallops Flight Facility
+						<input type="checkbox" name="loc" value="Wallops Flight Facility">
+					</label>
+					<!-- NASA center checkboxes -->	
+					<h4>NASA Centers:</h4>
+					<label class="check">Ames Research
+						<input type="checkbox" name="center" value="ARC">
+					</label>
+					<label class="check">Armstrong Flight Research
+						<input type="checkbox" name="center" value="AFRC">
+					</label>
+					<label class="check">Glenn Research
+						<input type="checkbox" name="center" value="GRC">
+					</label>
+					<label class="check">Goddard Space Flight
+						<input type="checkbox" name="center" value="GSFC">
+					</label>
+					<label class="check">Jet Propulsion Laboratory
+						<input type="checkbox" name="center" value="JPL">
+					</label>
+					<label class="check">Johnson Space
+						<input type="checkbox" name="center" value="JSC">
+					</label>
+					<label class="check">Kennedy Space
+						<input type="checkbox" name="center" value="KSC">
+					</label>
+					<label class="check">Langley Research
+						<input type="checkbox" name="center" value="LRC">
+					</label>
+					<label class="check">Michoud Assembly Facility
+						<input type="checkbox" name="center" value="MAF">
+					</label>
+					<label class="check">Stennis Space
+						<input type="checkbox" name="center" value="SSC">
+					</label>
+					<button>Apply Changes</button>
+				</form>
+			</div>
+		</div>
+		<!-- Right column of the body -->
+		<div class="col-sm-9">
+			<!-- Displays what is currently being searched -->
+			<div id="curr_search">
+				<h4>You are currently searching images of {{ message }}</h4>
+			</div>
+			<!-- Image gallery: 9 images with titles and scrollable descriptions,
+				click image to view image on a new tab -->
+			<div id="images">
+				<div class="gallery">
+				  <a target="_blank" href="{{ image1 }}">
+				    <img src="{{ image1 }}" alt="Image1" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title1 }}</h5>
+				  	<p>Date Taken: {{ date1 }}</p>
+				  	<p>{{ desc1 }}</p>
+				  </div>
+				</div>
+				<div class="gallery">
+				  <a target="_blank" href="{{ image2 }}">
+				    <img src="{{ image2 }}" alt="Image2" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title2 }}</h5>
+				  	<p>Date Taken: {{ date2 }}</p>
+				  	<p>{{ desc2 }}</p>
+				  </div>
+				</div>
+				<div class="gallery">
+				  <a target="_blank" href="{{ image3 }}">
+				    <img src="{{ image3 }}" alt="Image3" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title3 }}</h5>
+				  	<p>Date Taken: {{ date3 }}</p>
+				  	<p>{{ desc3 }}</p>
+				  </div>
+				</div>
+				<div class="gallery">
+				  <a target="_blank" href="{{ image4 }}">
+				    <img src="{{ image4 }}" alt="Image4" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title4 }}</h5>
+				  	<p>Date Taken: {{ date4 }}</p>
+				  	<p>{{ desc4 }}</p>
+				  </div>
+				</div>
+				<div class="gallery">
+				  <a target="_blank" href="{{ image5 }}">
+				    <img src="{{ image5 }}" alt="Image5" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title5 }}</h5>
+				  	<p>Date Taken: {{ date5 }}</p>
+				  	<p>{{ desc5 }}</p>
+				  </div>
+				</div>
+				<div class="gallery">
+				  <a target="_blank" href="{{ image6 }}">
+				    <img src="{{ image6 }}" alt="Image6" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title6 }}</h5>
+				  	<p>Date Taken: {{ date6 }}</p>
+				  	<p>{{ desc6 }}</p>
+				  </div>
+				</div>
+				<div class="gallery">
+				  <a target="_blank" href="{{ image7 }}">
+				    <img src="{{ image7 }}" alt="Image7" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title7 }}</h5>
+				  	<p>Date Taken: {{ date7 }}</p>
+				  	<p>{{ desc7 }}</p>
+				  </div>
+				</div>
+				<div class="gallery">
+				  <a target="_blank" href="{{ image8 }}">
+				    <img src="{{ image8 }}" alt="Image8" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title8 }}</h5>
+				  	<p>Date Taken: {{ date8 }}</p>
+				  	<p>{{ desc8 }}</p>
+				  </div>
+				</div>
+				<div class="gallery">
+				  <a target="_blank" href="{{ image9 }}">
+				    <img src="{{ image9 }}" alt="Image9" width="600" height="400">
+				  </a>
+				  <div class="desc">
+				  	<h5>{{ title9 }}</h5>
+				  	<p>Date Taken: {{ date9 }}</p>
+				  	<p>{{ desc9 }}</p>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

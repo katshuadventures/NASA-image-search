@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+body { /* Sets the pale yellow background color */
+	background: #eff5dc;
+}
+
+.nav { /* Adds the galaxy background image on the top bar */
+	position: relative;
+	background-image: url("https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/09/11/15/galaxy-2643089-1920.jpg?w968");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 65% 50%;
+}	
+
+.nav h1 { /* NASA's Images headline*/
+	font-weight: 700;
+	color: #c5e1e4;
+	font-size: 72px;
+	text-transform: uppercase;
+	font-family: Lato;
+	text-align: left;
+	padding: 20px 20px;
+}
+
+.nav a { /* Removes the underline when click on the headline */
+	text-decoration: none;
+}
+
+#next_search { /* All next search sections: formats input search bar to match index.html's searchbar*/
+	text-align: right;
+	position: relative;
+	padding: 70px 60px;
+}
+
+#next_search input {
+	background-color: #eff5dc;
+	width: 550px;
+	font-size: 20px;
+	color: #7d9d9e;
+	font-family: Merriweather;
+}
+
+#next_search button { 
+	background-color: #7b9d9f;
+	color: #eff5dc;
+	text-align: center;
+	font-size: 20px;
+	height: 37px;
+}
+
+#outer_ps { /* Adjusts the space between the popular searches and the banner*/
+	padding-top: 20px;
+}
+
+#popular_searches { /* Popular searches (left hand column) dropdown div */
+	position: relative;
+	position: inline-block;
+	background-color: rgb(60, 67, 80, .7);
+}
+
+#popular_searches button { /* Transparent button that the popular searches title below is on */
+	background-color: Transparent;
+	outline: none;
+	border: none;
+}
+
+#popular_searches h3 { /* Popular Searches to Consider title*/
+	color: #eff5dc;
+	font-family: Lato;
+	font-size: 32px;
+	text-align: center;
+	padding: 15px;
+}
+
+.dropdown_content { /* Dropdown content: default is hidden */
+  display: none;
+  position: absolute;
+  background-color: #7b9d9f;
+  min-width: 300px;
+  box-shadow: 10px 10px 8px rgb(60, 67, 80);
+}
+
+.dropdown_content a {/* Styles the links inside the dropdown */
+  color: #eff5dc;
+  font-family: Merriweather;
+  padding: 12px 16px;
+  display: block;
+}
+
+.dropdown_content a:hover {/* Changes the color of the dropdown links on hover */
+	background-color: rgb(239, 245, 220, .25);
+}
+
+#popular_searches:hover .dropdown_content { /* Shows the dropdown menu on hover */
+	display: block;
+}
+
+#refine_searches { /* Refine Searches (left hand column) Section */
+	background-color: rgb(123, 157, 159, .6);
+	border: none;
+	padding-bottom: 24px;
+}
+
+#refine_searches h3 { /* Refine Searches title */
+	font-family: Lato;
+	font-size: 32px;
+	text-align: center;
+	color: #3c4350;
+	padding-top: 15px;
+}
+
+#refine_searches p { /* Notice line about 1 choice/search & reloading */
+	text-align: center;
+	font-family: Merriweather;
+	font-size: 14px;
+}
+
+#rs_form { /* Form for selecting the different options to refine the search */
+	padding: 0px 15px;
+	font-family: Merriweather;
+}
+
+#rs_form h4 { /* Date Range, Location, Center headings*/
+	font-family: Lato;
+	font-size: 22px;
+	color: #3c4350;
+}
+
+#rs_form button { /* Apply Changes button */
+	background-color: #4e6367;
+	color: #eff5dc;
+	text-align: center;
+	display: block;
+	font-size: 15px;
+	height: 27px;
+	border: none;
+	margin-top: 10px;
+}
+
+.date { /* The two dropdowns for the date range */
+	background-color: #eff5dc;
+	color: #7d9d9e;
+	font-size: 15px;
+	font-weight: 220;
+}
+
+.check { /* Locations' and centers' checkbox labels */
+	clear: both;
+	float: none;
+	display: block;
+	font-size: 14px;
+	font-weight: 220;
+	color: #4e6367;
+}
+
+.check input { /* Moves the checkbox to the left and adds margins */
+	clear: left;
+	float: left;
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+#curr_search h4 { /* Message about what is currently being searched */
+	font-family: Merriweather;
+	font-size: 32px;
+	font-style: italic;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.images { /* Image gallery outer div */
+	padding: 200px 200px;
+}
+
+.gallery { /* Uniform styling of each gallery element */
+  margin: 25px 10px;
+  border: 2px solid #eff5dc;
+  float: left;
+  width: 300px;
+}
+
+.gallery:hover { /* Adds a dark border around element on hover */
+  border: 2px solid #4e6367;
+}
+
+.gallery img { /* Makes sure each image is the same size */
+  position: relative;
+  width:  300px;
+  height: 300px;
+}
+
+.desc { /* Handles description overflow, so scroll to read entire description */
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  overflow: auto;
+  overflow-wrap: break-word;
+  width: 300px;
+  height: 200px;
+  border: none;
+}
+
+.desc h5 { /* Title of the image */
+	font-size: 20px;
+	font-family: Merriweather;
+}
+
+.desc p { /* Date created and the description */
+	font-size: 14px;
+	font-family: Lato;
+}
+
+

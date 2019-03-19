@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+body { /* Adds the galaxy background image */
+	background-image: url("https://static.standard.co.uk/s3fs-public/thumbnails/image/2018/09/11/15/galaxy-2643089-1920.jpg?w968");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.splashscreen { /* Positions the elements on the bottom left of the page */
+	width: 100%;
+	padding: 370px 70px;
+}
+
+.splashscreen h1{ /* Journey Through Space title */
+	text-align: left;
+	font-weight: 700;
+	color: #c5e1e4;
+	font-size: 94px;
+	text-transform: uppercase;
+	font-family: Lato;
+	margin-bottom: 14px;
+}
+
+.first_search { /* Centers the search form */
+	text-align: left;
+	position: relative;
+	margin-bottom: 16px;
+}
+
+.first_search input { /* Search input bar */
+	background-color: #eff5dc;
+	width: 550px;
+	font-size: 24px;
+	color: #7d9d9e;
+	font-family: Merriweather;
+}
+
+.first_search button { /* Search button */
+	background-color: #7b9d9f;
+	color: #eff5dc;
+	text-align: center;
+	font-size: 24px;
+	height: 37px;
+}
+
+.splashscreen h5 { /* Popular Searches heading */
+	text-align: left;
+	color: #c5e1e4;
+	font-size: 22px;
+	font-weight: 450;
+	font-family: Lato;
+}
+
+a { /* Styles the 3 popular searches direct links */
+	color: #7b9d9f;
+	text-decoration: none;
+}
+
+a:hover { /* Popular searches change color upon hover */
+	color: #c5e1e4;
+}
