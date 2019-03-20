@@ -188,7 +188,7 @@ def curr_search(PARAMS):
 	return message
 
 if __name__ == "__main__":
-	app.run(debug = True)
+	app.run()
 
 
  
