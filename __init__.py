@@ -163,7 +163,8 @@ def getdata(PARAMS):
 			title8 = titles[7], desc8 = descs[7], image8 = images[7], date8 = dates[7],
 			title9 = titles[8], desc9 = descs[8], image9 = images[8], date9 = dates[8],
 			message = curr_search(PARAMS))
-	#Renders the error page if there's less than 9 (gallery size) images available
+	
+	# Renders the error page if there's less than 9 (gallery size) images available
 	except IndexError:
 		return render_template('suggestions.html')
 
@@ -188,7 +189,7 @@ def curr_search(PARAMS):
 	return message
 
 if __name__ == "__main__":
-	app.run()
+	app.run(debug = True)
 
 
  
